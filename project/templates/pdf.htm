@@ -1,0 +1,17 @@
+{% extends "layout.htm" %}
+{% block body %}
+
+<link rel="stylesheet" href="{{url_for('static' , filename ='css/pdf.css')}}">
+
+<div id="accept_pdf">
+	<center>
+		<form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+			<div class="form-group">
+	        <input type = "file" name = "file" />
+	        <hr width="40%" align="center">
+	        <input class="btn btn-primary btn-md" type = "submit"/>
+      	</form>
+    </center>
+</div>
+
+{%endblock%}

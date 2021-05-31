@@ -1,0 +1,47 @@
+{% extends "layout.htm" %}
+{% block body %}
+
+<div class="main">
+	<ul>
+		<li class="cellContainer">
+		<a href="#">
+			<center>
+				<img src="{{ url_for('static' , filename = 'text1.png') }}" height ="100" width="100" align="center" id="pic">
+			</center>
+			<h4><font color=#fff>Text</font></h4>
+			<hr>
+			<p id="desc">Convert your text into a summary!</p>
+		</a>
+		</li>
+		
+		
+		
+		<li class="cellContainer">
+		<a href="/pdf">
+			<center>
+				<img src="{{ url_for('static' , filename = 'pdf.png') }}" height="100" width="80" align="center" id="pic">
+			</center>
+			<h4><font color=#fff>PDF</font></h4>
+			<hr>
+			<p id="desc">Convert your PDF into a summary!</p>
+ 		</a>	
+ 		</li>
+ 		
+
+ 		
+		<li class="cellContainer">
+		<a href="#">	
+			<center>
+				<img src="{{ url_for('static' , filename = 'audio.jpg') }}" height="100" width="80" align="center" id="pic">
+			</center>
+			<h4><font color=#fff> Audio </font></h4>
+			<hr>
+			<p id="desc">Convert your Audio into a summary!</p>
+		</a>	
+		</li> 
+</ul>			
+<br>
+
+{%endblock%}
+
+
