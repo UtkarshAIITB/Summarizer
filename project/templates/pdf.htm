@@ -5,7 +5,7 @@
 
 <div id="accept_pdf">
 	<center>
-		<form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+		<form action = "/upload" method = "POST" enctype = "multipart/form-data">
 			<div class="form-group">
 	        <input type = "file" name = "file" />
 	        <hr width="40%" align="center">
@@ -13,5 +13,11 @@
       	</form>
     </center>
 </div>
+
+<center>
+<div class="mb-3">
+  		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" >{{ final }}</textarea>
+</div>
+<center>
 
 {%endblock%}

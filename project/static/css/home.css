@@ -1,5 +1,17 @@
 .nav-item{
 	font-weight: 500;
+} 
+
+.nav-link{
+	color: #fff !important;
+}
+
+.nav-link:hover{
+	color: #C7C7C7 !important;
+}
+
+.navbar{
+	background: linear-gradient(-150deg, #56bda2, #2494a2, #304b78, #012551) !important;
 }
 
 /*.container{
@@ -57,14 +69,251 @@ ul{
 	/*display: grid;*/
 	/*grid-template-columns:30% 30% 30% ;*/
 	display: flex;
-	margin: 50px ;
+	margin: 120px ;
 	padding: 0px;
 
 }
-
-#pic{
-	border: 4px solid #ccffff;
+/*
+.obj1{
+    position: absolute;
+    z-index: -2;
+    left: 10px;
+    width:50px;
+    height: 10px;
+    border: 3px #2494a2 solid;
+    border-radius: 9999px;
+    animation: rand1 25s linear infinite alternate;
+    -moz-animation: rand1 25s linear infinite alternate;
+    -webkit-animation: rand1 25s linear infinite alternate;
 }
+@keyframes rand1{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(100px) translateY(300px) rotate(125deg);
+    }
+    100%{
+        transform: translateX(-100px) translateY(400px) rotate(-125deg);
+    }
+}
+
+.obj2{
+    position: absolute;
+    z-index: -2;
+    right: 400px;
+    width:50px;
+    height: 10px;
+    border: 3px #2494a2 solid;
+    border-radius: 9999px;
+    animation: rand1 25s linear infinite alternate-reverse;
+    -moz-animation: rand1 25s linear infinite alternate-reverse;
+    -webkit-animation: rand1 25s linear infinite alternate-reverse;
+}
+
+.obj3 {
+    position: absolute;
+    z-index: -2;
+    bottom: 20px;
+    left: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 9999px;
+    border: 3px #304b78 solid;
+    animation: rand2 50s linear infinite alternate;
+    -moz-animation: rand2 50s linear infinite alternate;
+    -webkit-animation: rand2 50s linear infinite alternate;
+}
+
+.obj4 {
+    position: absolute;
+    top: 100px;
+    z-index: -2;
+    right: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 9999px;
+    border: 3px #304b78 solid;
+    animation: rand3 50s linear infinite alternate;
+    -moz-animation: rand3 50s linear infinite alternate;
+    -webkit-animation: rand3 50s linear infinite alternate;
+}
+
+@keyframes rand2{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(100px) translateY(-400px) rotate(105deg);
+    }
+    100%{
+        transform: translateX(-100px) translateY(400px) rotate(-105deg);
+    }
+}
+
+@keyframes rand3{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-200px) translateY(400px) rotate(105deg);
+    }
+    100%{
+        transform: translateX(100px) translateY(-300px) rotate(-105deg);
+    }
+}
+
+.obj5{
+    position: absolute;
+    z-index: -2;
+    right: 10px;
+    bottom: 20px;
+    width:100px;
+    height: 30px;
+    background: linear-gradient(-150deg, #56bda2, #304b78);
+    border-radius: 9999px;
+    animation: rand4 50s linear infinite alternate;
+    -moz-animation: rand4 50s linear infinite alternate;
+    -webkit-animation: rand4 50s linear infinite alternate;
+}
+
+.obj6{
+    position: absolute;
+    z-index: -2;
+    left: 80px;
+    top: 100px;
+    width:100px;
+    height: 30px;
+    background: linear-gradient(-150deg, #2494a2, #304b78);
+    border-radius: 9999px;
+    animation: rand5 45s linear infinite alternate;
+    -moz-animation: rand5 45s linear infinite alternate;
+    -webkit-animation: rand5 45s linear infinite alternate;
+}
+@keyframes rand4{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-200px) translateY(-600px) rotate(145deg);
+    }
+    100%{
+        transform: translateX(100px) translateY(-300px) rotate(-135deg);
+    }
+}
+@keyframes rand5{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(100px) translateY(600px) rotate(145deg);
+    }
+    100%{
+        transform: translateX(-100px) translateY(300px) rotate(-135deg);
+    }
+}
+/*
+
+.obj7 {
+    position: absolute;
+    z-index: -2;
+    bottom: 20px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 9999px;
+    background: linear-gradient(-150deg, #56bda2,#012551);
+    animation: rand6 50s linear infinite alternate;
+    -moz-animation: rand6 50s linear infinite alternate;
+    -webkit-animation: rand6 50s linear infinite alternate;
+}
+.obj8 {
+    position: absolute;
+    z-index: -2;
+    top: 100px;
+    right: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 9999px;
+    background: linear-gradient(-150deg, #2494a2, #56bda2);
+    animation: rand8 50s linear infinite alternate;
+    -moz-animation: rand8 50s linear infinite alternate;
+    -webkit-animation: rand8 50s linear infinite alternate;
+}
+
+@keyframes rand6{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    30%{
+        transform: translateX(-30px) translateY(-90px) rotate(145deg);
+    }
+    60%{
+        transform: translateX(200px) translateY(-300px) rotate(145deg);
+    }
+    100%{
+        transform: translateX(-100px) translateY(-200px) rotate(-135deg);
+    }
+}
+@keyframes rand8{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    30%{
+        transform: translateX(-30px) translateY(90px) rotate(145deg);
+    }
+    60%{
+        transform: translateX(100px) translateY(300px) rotate(145deg);
+    }
+    100%{
+        transform: translateX(-140px) translateY(200px) rotate(-135deg);
+    }
+}
+
+.obj9{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    animation: rand9 50s linear infinite alternate;
+    -moz-animation: rand9 50s linear infinite alternate;
+    -webkit-animation: rand9 50s linear infinite alternate;
+    z-index: -2;
+}
+
+.obj9 li{
+    list-style-type: none;
+    z-index: -2;
+    width:100px;
+    height: 30px;
+    border-radius: 9999px;
+}
+.obj9 li:nth-child(2){
+    background: linear-gradient(-150deg, #56bda2, #2494a2);
+    width:106px;
+    height: 36px;
+    transform: translateY(-36px);
+}
+.obj9 li:nth-child(1){
+    border: 3px #56bda2 solid;
+    transform: rotate(90deg);
+    width:100px;
+    height: 30px;
+}
+@keyframes rand9{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    10%{
+        transform: translateX(30px) translateY(-90px) rotate(145deg);
+    }
+    70%{
+        transform: translateX(600px) translateY(-300px) rotate(65deg);
+    }
+    100%{
+        transform: translateX(-100px) translateY(200px) rotate(-135deg);
+    }
+}
+*/
 
 a{
 	text-decoration: none;
