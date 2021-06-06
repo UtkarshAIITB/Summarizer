@@ -212,7 +212,7 @@ ul{
         transform: translateX(-100px) translateY(300px) rotate(-135deg);
     }
 }
-/*
+
 
 .obj7 {
     position: absolute;
@@ -226,19 +226,6 @@ ul{
     animation: rand6 50s linear infinite alternate;
     -moz-animation: rand6 50s linear infinite alternate;
     -webkit-animation: rand6 50s linear infinite alternate;
-}
-.obj8 {
-    position: absolute;
-    z-index: -2;
-    top: 100px;
-    right: 50px;
-    height: 30px;
-    width: 30px;
-    border-radius: 9999px;
-    background: linear-gradient(-150deg, #2494a2, #56bda2);
-    animation: rand8 50s linear infinite alternate;
-    -moz-animation: rand8 50s linear infinite alternate;
-    -webkit-animation: rand8 50s linear infinite alternate;
 }
 
 @keyframes rand6{
@@ -255,64 +242,7 @@ ul{
         transform: translateX(-100px) translateY(-200px) rotate(-135deg);
     }
 }
-@keyframes rand8{
-    0%{
-        transform: translateX(0px) translateY(0px) rotate(0deg);
-    }
-    30%{
-        transform: translateX(-30px) translateY(90px) rotate(145deg);
-    }
-    60%{
-        transform: translateX(100px) translateY(300px) rotate(145deg);
-    }
-    100%{
-        transform: translateX(-140px) translateY(200px) rotate(-135deg);
-    }
-}
 
-.obj9{
-    position: absolute;
-    left: 30px;
-    bottom: 20px;
-    animation: rand9 50s linear infinite alternate;
-    -moz-animation: rand9 50s linear infinite alternate;
-    -webkit-animation: rand9 50s linear infinite alternate;
-    z-index: -2;
-}
-
-.obj9 li{
-    list-style-type: none;
-    z-index: -2;
-    width:100px;
-    height: 30px;
-    border-radius: 9999px;
-}
-.obj9 li:nth-child(2){
-    background: linear-gradient(-150deg, #56bda2, #2494a2);
-    width:106px;
-    height: 36px;
-    transform: translateY(-36px);
-}
-.obj9 li:nth-child(1){
-    border: 3px #56bda2 solid;
-    transform: rotate(90deg);
-    width:100px;
-    height: 30px;
-}
-@keyframes rand9{
-    0%{
-        transform: translateX(0px) translateY(0px) rotate(0deg);
-    }
-    10%{
-        transform: translateX(30px) translateY(-90px) rotate(145deg);
-    }
-    70%{
-        transform: translateX(600px) translateY(-300px) rotate(65deg);
-    }
-    100%{
-        transform: translateX(-100px) translateY(200px) rotate(-135deg);
-    }
-}
 */
 
 a{

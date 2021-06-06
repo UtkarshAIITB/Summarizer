@@ -29,8 +29,6 @@ def upload_file():
         file_name = f.filename
         #return('file uploaded successfully')
         
-   
-        #def pdf():
         fileobj = open(file_name, 'rb')
         pdfreader = PyPDF2.PdfFileReader(fileobj)
         page = pdfreader.numPages                                      #stores total no. of pages
@@ -55,34 +53,6 @@ def upload_file():
         #return render_template('pdf.htm' , page = page)
 
     return render_template('pdf.htm', final = final)
-
-'''
-@app.route('/pdfpage')
-def pdf():
-    fileobj = open(file_name, 'rb')
-    pdfreader = PyPDF2.PdfFileReader(fileobj)
-    page = pdfreader.numPages                         #stores total no. of pages
-    text = ""
-
-    for x in range(page):
-        pageObj = pdfreader.getPage(x)
-        parts = pageObj.extractText()                  #extracts the text from the pdf file of a particular page in parts
-        #parts = parts.replace(' ', '-')
-        text +=parts                                   #stored the complete data of pdf in the text 
-
-    #text = re.sub("-"," ", text)
-    text = text.replace("\n", " ")
-
-    with open('summary.txt', 'w', encoding = 'utf-8') as s:                #storing the extracted data from pdf into text file 
-        s.write(text)
-
-    final =  generate_summary("summary.txt", 2) 
-    return(final)
-    
-    fileobj.close()
-    #return render_template('pdf.htm' , page = page)
-'''
-
 
 
 if __name__ == "__main__":
