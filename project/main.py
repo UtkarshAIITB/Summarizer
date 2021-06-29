@@ -22,34 +22,39 @@ def pdf1():
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file():
+    ALLOWED_EXTENSIONS = {'pdf'}                                      #extensions allowed for submitting
     if request.method == 'POST':
         f = request.files['file']
         global file_name
         f.save(secure_filename(f.filename))
         file_name = f.filename
+        extension = file_name.rsplit(".",1)[1]
+
+        if extension == "pdf":
         #return('file uploaded successfully')
         
-        fileobj = open(file_name, 'rb')
-        pdfreader = PyPDF2.PdfFileReader(fileobj)
-        page = pdfreader.numPages                                      #stores total no. of pages
-        text = ""
-            
-        for x in range(page):
-            pageObj = pdfreader.getPage(x)
-            parts = pageObj.extractText()                              #extracts the text from the pdf file of a particular page in parts
-            #parts = parts.replace(' ', '-')
-            text +=parts                                               #stored the complete data of pdf in the text 
+            fileobj = open(file_name, 'rb')
+            pdfreader = PyPDF2.PdfFileReader(fileobj)
+            page = pdfreader.numPages                                      #stores total no. of pages
+            text = ""
+                
+            for x in range(page):
+                pageObj = pdfreader.getPage(x)
+                parts = pageObj.extractText()                              #extracts the text from the pdf file of a particular page in parts
+                #parts = parts.replace(' ', '-')
+                text +=parts                                               #stored the complete data of pdf in the text 
 
-            #text = re.sub("-"," ", text)
-        text = text.replace("\n", " ")
+                #text = re.sub("-"," ", text)
+            text = text.replace("\n", " ")
 
-        with open('summary.txt', 'w', encoding = 'utf-8') as s:        #storing the extracted data from pdf into text file 
-            s.write(text)
+            with open('summary.txt', 'w', encoding = 'utf-8') as s:        #storing the extracted data from pdf into text file 
+                s.write(text)
 
-        final = generate_summary("summary.txt", 2) 
-            
+            final = generate_summary("summary.txt", 2) 
+            fileobj.close()
 
-        fileobj.close()
+        else:
+            final = "File not supported. Submit only '.pdf' files."
         #return render_template('pdf.htm' , page = page)
 
     return render_template('pdf.htm', final = final)

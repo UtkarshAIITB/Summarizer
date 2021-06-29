@@ -73,7 +73,7 @@ ul{
 	padding: 0px;
 
 }
-/*
+
 .obj1{
     position: absolute;
     z-index: -2;
@@ -82,7 +82,7 @@ ul{
     height: 10px;
     border: 3px #2494a2 solid;
     border-radius: 9999px;
-    animation: rand1 25s linear infinite alternate;
+    animation: rand1 25s linear infinite alternate; 
     -moz-animation: rand1 25s linear infinite alternate;
     -webkit-animation: rand1 25s linear infinite alternate;
 }
@@ -101,7 +101,7 @@ ul{
 .obj2{
     position: absolute;
     z-index: -2;
-    right: 400px;
+    right: 200px;
     width:50px;
     height: 10px;
     border: 3px #2494a2 solid;
@@ -114,7 +114,7 @@ ul{
 .obj3 {
     position: absolute;
     z-index: -2;
-    bottom: 20px;
+    bottom: 50px;
     left: 50px;
     height: 20px;
     width: 20px;
@@ -190,6 +190,7 @@ ul{
     -moz-animation: rand5 45s linear infinite alternate;
     -webkit-animation: rand5 45s linear infinite alternate;
 }
+
 @keyframes rand4{
     0%{
         transform: translateX(0px) translateY(0px) rotate(0deg);
@@ -201,6 +202,7 @@ ul{
         transform: translateX(100px) translateY(-300px) rotate(-135deg);
     }
 }
+
 @keyframes rand5{
     0%{
         transform: translateX(0px) translateY(0px) rotate(0deg);
@@ -212,8 +214,7 @@ ul{
         transform: translateX(-100px) translateY(300px) rotate(-135deg);
     }
 }
-
-
+/*
 .obj7 {
     position: absolute;
     z-index: -2;
