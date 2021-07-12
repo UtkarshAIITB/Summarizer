@@ -35,7 +35,7 @@
  		</li>
  		
 		<li class="cellContainer">
-		<a href="#">	
+		<a href="/audio">	
 			<center>
 				<img src="{{ url_for('static' , filename = 'audio.jpg') }}" height="100" width="80" align="center" id="pic">
 			</center>
@@ -44,14 +44,41 @@
 			<p id="desc">Convert your Audio into a summary!</p>
 		</a>	
 		</li> 
-</ul>			
-<br>
+	</ul>			
+</div>
 
-<!-- <div class="container-f">
-	<div class="item" id="item-1">Text</div>
-	<div class="item" id="item-2">PDF</div>
-	<div class="item" id="item-3">Audio</div>
-</div> -->
+<div class="container-f">
+	<div class="item" id="item-1">
+		<a href="/text">
+			<center>
+				<img src="{{ url_for('static' , filename = 'text1.png') }}" height ="100" width="100" align="center" id="pic">
+			</center>
+			<h4><font color=#fff>Text</font></h4>
+			<hr color = #35DEF3>
+			<p id="desc">Convert your text into a summary!</p>
+		</a>
+	</div>
+	<div class="item" id="item-2">
+		<a href="/pdf">
+			<center>
+				<img src="{{ url_for('static' , filename = 'pdf.png') }}" height="100" width="80" align="center" id="pic">
+			</center>
+			<h4><font color=#fff>PDF</font></h4>
+			<hr color = #35DEF3>
+			<p id="desc">Convert your PDF into a summary!</p>
+		</a>
+	</div>
+	<div class="item" id="item-3">
+		<a href="/audio">
+			<center>
+				<img src="{{ url_for('static' , filename = 'audio.jpg') }}" height="100" width="80" align="center" id="pic">
+			</center>
+			<h4><font color=#fff> Audio </font></h4>
+			<hr color = #35DEF3>
+			<p id="desc">Convert your Audio into a summary!</p>
+		</a>
+	</div>
+</div>
 
 {%endblock%}
 

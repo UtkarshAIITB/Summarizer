@@ -108,6 +108,9 @@ def upload_file():
 
     return render_template('pdf.htm', final = final)
 
+@app.route('/audio')
+def audio():
+    return render_template('audio.htm')
 
 if __name__ == "__main__":
     app.run(debug = True)
