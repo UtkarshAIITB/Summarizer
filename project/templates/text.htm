@@ -1,0 +1,23 @@
+{% extends "layout.htm" %}
+{% block body %}
+
+<link rel="stylesheet" href="{{url_for('static' , filename ='css/text.css')}}">
+
+<center>
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <form action = "/textupload" method = "POST" enctype = "multipart/form-data">
+            <div class="text-input">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="text">{{ input }}</textarea>
+                <br>
+                <input class="btn btn-primary btn-md" type = "submit"/>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class="text-output">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">{{ short }}</textarea>
+        </div>  
+    </div>
+</center>
+{%endblock%}

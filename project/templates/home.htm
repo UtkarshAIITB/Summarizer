@@ -1,18 +1,19 @@
 {% extends "layout.htm" %}
 {% block body %} 
 
-
+<!--
 <div class = "obj1"></div>
 <div class="obj2"></div>
 <div class="obj3"></div>
 <div class="obj4"></div>
 <div class="obj5"></div>
 <div class="obj6"></div>
+-->
 
 <div class="main"> 
 	<ul>
 		<li class="cellContainer">
-		<a href="#">
+		<a href="/text">
 			<center>
 				<img src="{{ url_for('static' , filename = 'text1.png') }}" height ="100" width="100" align="center" id="pic">
 			</center>
@@ -45,6 +46,12 @@
 		</li> 
 </ul>			
 <br>
+
+<!-- <div class="container-f">
+	<div class="item" id="item-1">Text</div>
+	<div class="item" id="item-2">PDF</div>
+	<div class="item" id="item-3">Audio</div>
+</div> -->
 
 {%endblock%}
 
