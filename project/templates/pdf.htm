@@ -8,6 +8,8 @@
 		<form action = "/upload" method = "POST" enctype = "multipart/form-data">
 			<div class="form-group">
 	        <input type = "file" name = "file" />
+			<br><br>
+			<input type="text" class="form-control input_text" placeholder="No. of Lines of Summary" name="lines_summary">
 	        <hr width="40%" align="center">
 	        <input class="btn btn-primary btn-md" type = "submit"/>
       	</form>
@@ -16,7 +18,7 @@
 
 <center>
 <div class="mb-3">
-  		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" >{{ final }}</textarea>
+  		<textarea class="form-control" id="exampleFormControlTextarea1" rows="8" >{{ final }}</textarea>
 </div>
 <center>
 

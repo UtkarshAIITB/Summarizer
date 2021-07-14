@@ -31,9 +31,8 @@ def text():
 
 @app.route('/textupload', methods = ['GET', 'POST'])
 def upload_text():
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size = 10)
+    summ_lines = request.form['lines_summary']
+    summ_lines = int(summ_lines)
 
     short = request.form['text']                                  #input the updated text
     short = short.replace("\n", "")
@@ -58,7 +57,7 @@ def upload_text():
         s.truncate(0)
         s.write(text)
 
-    short = generate_summary('summary.txt', 2)
+    short = generate_summary('summary.txt', summ_lines)
     fileobj.close()
 
     return render_template('text.htm' ,short = short)
@@ -72,6 +71,8 @@ def pdf1():
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file():
     ALLOWED_EXTENSIONS = {'pdf'}                                      #extensions allowed for submitting
+    summ_lines = request.form['lines_summary']
+    summ_lines = int(summ_lines)
     if request.method == 'POST':
         f = request.files['file']
         global file_name
@@ -99,7 +100,7 @@ def upload_file():
             with open('summary.txt', 'w', encoding = 'utf-8') as s:        #storing the extracted data from pdf into text file 
                 s.write(text)
 
-            final = generate_summary("summary.txt", 2) 
+            final = generate_summary("summary.txt", summ_lines) 
             fileobj.close()
 
         else:
