@@ -11,6 +11,7 @@ from summarize import *
 import re
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.units import inch, cm
+from audio import *
 
 
 local_server = True
@@ -111,6 +112,23 @@ def upload_file():
 
 @app.route('/audio')
 def audio():
+    return render_template('audio.htm')
+
+@app.route('/aud')
+def upload_audio():
+    if request.method == 'POST':
+        f = request.files['file']
+        global file_name
+        f.save(secure_filename(f.filename))
+        file_name = f.filename
+
+    path = file_name
+    text = get_large_audio_transcription(path)
+
+    with open('summary.txt', 'w', encoding = 'utf-8') as s:
+        s.truncate(0)
+        s.write(text)
+
     return render_template('audio.htm')
 
 if __name__ == "__main__":

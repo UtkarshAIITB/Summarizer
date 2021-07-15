@@ -1,5 +1,20 @@
 {% extends "layout.htm" %}
 {% block body %}
 
+<link rel="stylesheet" href="{{url_for('static' , filename ='css/audio.css')}}">
+
+<div id="audio_accept">
+    <center>
+        <form action = "/aud" method = "POST" enctype = "multipart/form-data">
+            <div class="form-group">
+                <input type = "file" name = "file" />
+                <hr width="40%" align="center">
+                <input class="btn btn-primary btn-md" type = "submit"/>
+            </div>
+        </form>
+    </center>
+</div>
+
+
 
 {%endblock%}
