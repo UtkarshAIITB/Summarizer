@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from networkx.generators.intersection import general_random_intersection_graph
 from werkzeug.utils import secure_filename
 from fpdf import FPDF
 import PyPDF2
@@ -82,7 +83,6 @@ def upload_file():
         extension = file_name.rsplit(".",1)[1]
 
         if extension == "pdf":
-        #return('file uploaded successfully')
         
             fileobj = open(file_name, 'rb')
             pdfreader = PyPDF2.PdfFileReader(fileobj)
@@ -92,7 +92,6 @@ def upload_file():
             for x in range(page):
                 pageObj = pdfreader.getPage(x)
                 parts = pageObj.extractText()                      #extracts the text from the pdf file of a particular page in parts
-                #parts = parts.replace(' ', '-')
                 text +=parts                                               #stored the complete data of pdf in the text 
 
                 #text = re.sub("-"," ", text)
@@ -114,22 +113,33 @@ def upload_file():
 def audio():
     return render_template('audio.htm')
 
-@app.route('/aud')
+@app.route('/aud', methods = ['GET', 'POST'])
 def upload_audio():
+
+    summ_lines = request.form['lines_summary']
+    summ_lines = int(summ_lines)
+
     if request.method == 'POST':
         f = request.files['file']
         global file_name
         f.save(secure_filename(f.filename))
         file_name = f.filename
+        extension = file_name.rsplit(".",1)[1]
 
-    path = file_name
-    text = get_large_audio_transcription(path)
+        if extension == "wav":
+            path = file_name
+            text = get_large_audio_transcription(path)
 
-    with open('summary.txt', 'w', encoding = 'utf-8') as s:
-        s.truncate(0)
-        s.write(text)
+            with open('summary.txt', 'w', encoding = 'utf-8') as s:
+                s.truncate(0)
+                s.write(text)
 
-    return render_template('audio.htm')
+            final = generate_summary("summary.txt" , summ_lines)
+
+        else:
+            final = "Please enter files with .wav extensions only."
+
+    return render_template('audio.htm', final = final)
 
 if __name__ == "__main__":
     app.run(debug = True)
