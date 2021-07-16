@@ -53,7 +53,7 @@ def upload_text():
         parts = pageObj.extractText()
         text += parts
 
-    text = text.replace("/n" , " ")
+    text = text.replace("\n" , " ")
 
     with open('summary.txt', 'w', encoding = 'utf-8') as s:
         s.truncate(0)
