@@ -13,3 +13,11 @@
 .input_text{
 	width:50%;
 }
+
+#end{
+	width: 100%;
+	color: #ffffff;
+	background: #414245 !important;
+	position: fixed;
+	bottom: 0px;
+}

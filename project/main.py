@@ -37,7 +37,7 @@ def upload_text():
     summ_lines = int(summ_lines)
 
     short = request.form['text']                                  #input the updated text
-    short = short.replace("\n", "")
+    # short = short.replace("\n", "")
 
     canvas = Canvas('summary.pdf')
     canvas.drawString(1*inch , 10*inch, short)
@@ -53,7 +53,7 @@ def upload_text():
         parts = pageObj.extractText()
         text += parts
 
-    text = text.replace("\n" , " ")
+    # text = text.replace("\n" , " ")
 
     with open('summary.txt', 'w', encoding = 'utf-8') as s:
         s.truncate(0)

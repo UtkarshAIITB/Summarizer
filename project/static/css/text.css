@@ -5,3 +5,11 @@
 .text-output{
     width:50vw;
 }
+
+#end{
+	width: 100%;
+	color: #ffffff;
+	background: #414245 !important;
+	position: absolute;
+	bottom: 0px;
+}

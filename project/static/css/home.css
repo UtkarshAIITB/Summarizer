@@ -33,8 +33,9 @@ ul{
 	width: 100%;
 	color: #ffffff;
 	background: #414245 !important;
-	position: fixed;
+	position: absolute;
 	bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .main ul{
