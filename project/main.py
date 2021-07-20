@@ -36,8 +36,7 @@ def upload_text():
     summ_lines = request.form['lines_summary']
     summ_lines = int(summ_lines)
 
-    short = request.form['text']                                  #input the updated text
-    # short = short.replace("\n", "")
+    short = request.form['text']                                  
 
     canvas = Canvas('summary.pdf')
     canvas.drawString(1*inch , 10*inch, short)
@@ -53,8 +52,6 @@ def upload_text():
         parts = pageObj.extractText()
         text += parts
 
-    # text = text.replace(" nn"," ")
-
     with open('summary.txt', 'w', encoding = 'utf-8') as s:
         s.truncate(0)
         s.write(text)
@@ -68,13 +65,13 @@ def upload_text():
 
 
 @app.route('/pdf')
-def pdf1():
+def pdf():
     return render_template('pdf.htm')
 
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file():
-    ALLOWED_EXTENSIONS = {'pdf'}                                      #extensions allowed for submitting
+    ALLOWED_EXTENSIONS = {'pdf'}                                      
     summ_lines = request.form['lines_summary']
     summ_lines = int(summ_lines)
     if request.method == 'POST':
@@ -88,21 +85,21 @@ def upload_file():
         
             fileobj = open(file_name, 'rb')
             pdfreader = PyPDF2.PdfFileReader(fileobj)
-            page = pdfreader.numPages                                      #stores total no. of pages
+            page = pdfreader.numPages                                      
             text = ""
                 
             for x in range(page):
                 pageObj = pdfreader.getPage(x)
-                parts = pageObj.extractText()                      #extracts the text from the pdf file of a particular page in parts
-                text +=parts                                               #stored the complete data of pdf in the text 
+                parts = pageObj.extractText()                      
+                text +=parts                                               
 
-                #text = re.sub("-"," ", text)
-            text = text.replace("\n", " ")
+            text = text.replace("\n", "")
 
-            with open('summary.txt', 'w', encoding = 'utf-8') as s:        #storing the extracted data from pdf into text file 
+            with open('summary.txt', 'w', encoding = 'utf-8') as s:        
                 s.write(text)
 
             final = generate_summary("summary.txt", summ_lines) 
+            final+="."
             fileobj.close()
 
         else:
@@ -111,9 +108,11 @@ def upload_file():
 
     return render_template('pdf.htm', final = final)
 
+
 @app.route('/audio')
 def audio():
     return render_template('audio.htm')
+
 
 @app.route('/aud', methods = ['GET', 'POST'])
 def upload_audio():
@@ -137,11 +136,13 @@ def upload_audio():
                 s.write(text)
 
             final = generate_summary("summary.txt" , summ_lines)
+            final+="."
 
         else:
             final = "Please enter files with .wav extensions only."
 
     return render_template('audio.htm', final = final)
+
 
 if __name__ == "__main__":
     app.run(debug = True)
