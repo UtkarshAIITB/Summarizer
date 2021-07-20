@@ -124,7 +124,7 @@
         transform: translateX(-600px) translateY(-400px) rotate(-120deg);
     }
     100%{
-        transform: translateX(-1300px) translateY(200px) rotate(120deg);
+        transform: translateX(-1300px) translateY(100px) rotate(120deg);
     }
 }
 

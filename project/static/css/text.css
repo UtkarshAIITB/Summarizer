@@ -9,7 +9,8 @@
 #end{
 	width: 100%;
 	color: #ffffff;
-	background: #414245 !important;
+	/* background: #414245 !important; */
+	background: linear-gradient(-150deg, #56bda2, #2494a2, #304b78, #012551) !important;
 	position: absolute;
 	bottom: 0px;
 }
