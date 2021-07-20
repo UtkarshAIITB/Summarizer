@@ -2,12 +2,21 @@
 {% block body %}
 
 <link rel="stylesheet" href="{{url_for('static' , filename ='css/audio.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/animation.css')}}">
+
+<div class="obj1"></div>
+<div class="obj2"></div>
+<div class="obj3"></div>
+<div class="obj4"></div>
+<div class="obj5"></div>
+<div class="obj6"></div>
+<div class="obj7"></div>
 
 <div id="audio_accept">
     <center>
         <form action = "/aud" method = "POST" enctype = "multipart/form-data">
             <div class="form-group">
-                <input type = "file" name = "file" />
+                <input type = "file" name = "file" id="entry" />
                 <br><br>
                 <input type="text" class="form-control input_text" placeholder="No. of Lines of Summary" name="lines_summary">
                 <hr width="40%" align="center">

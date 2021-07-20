@@ -1,0 +1,177 @@
+.obj1{
+    position:absolute;
+    z-index: -2;
+    left:10px;
+    top:50px;
+    width: 50px;
+    height: 10px;
+    border-radius :9999px;
+    border: 3px #2494a3 solid;
+    background: linear-gradient(-150deg, #56bda2, #2494a2, #304b78, #012551);
+    animation-name: rand1;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rand1{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(60px) translateY(400px) rotate(120deg);
+    }
+    100%{
+        transform: translateX(80px) translateY(600px) rotate(-130deg);
+    }
+}
+
+.obj2{
+    position:absolute;
+    z-index: -1;
+    left: 10px;
+    bottom: 150px;
+    width:50px;
+    height: 10px;
+    border: 3px #2494a2 solid;
+    border-radius: 9999px;
+    background: linear-gradient(-150deg, #56bda2, #2494a2, #304b78, #012551);
+    animation-name: rand2;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rand2{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(60px) translateY(-400px) rotate(-125deg);
+    }
+    100%{
+        transform: translateX(80px) translateY(-600px) rotate(125deg);
+    }
+}
+
+.obj3{
+    position: absolute;
+    z-index: -2;
+    bottom: 100px;
+    left: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 9999px;
+    border: 3px #304b78 solid;
+    animation-name: rand3;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rand3{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(600px) translateY(-300px) rotate(120deg);
+    }
+    100%{
+        transform: translateX(1200px) translateY(-600px) rotate(-120deg);
+    }
+}
+
+.obj4{
+    position: absolute;
+    z-index: -2;
+    bottom: 100px;
+    right: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 9999px;
+    border: 3px #304b78 solid;
+    animation-name: rand4;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rand4{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-600px) translateY(-300px) rotate(-120deg);
+    }
+    100%{
+        transform: translateX(-1200px) translateY(-600px) rotate(120deg);
+    }
+}
+
+.obj5{
+    position: absolute;
+    z-index: -2;
+    right: 30px;
+    bottom: 100px;
+    width:100px;
+    height: 30px;
+    background: linear-gradient(-150deg, #56bda2, #304b78);
+    border-radius: 9999px;
+    animation: rand5 25s linear infinite alternate;
+}
+
+@keyframes rand5{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-600px) translateY(-400px) rotate(-120deg);
+    }
+    100%{
+        transform: translateX(-1300px) translateY(200px) rotate(120deg);
+    }
+}
+
+.obj6{
+    position: absolute;
+    z-index: -2;
+    bottom: 150px;
+    left: 200px;
+    height: 30px;
+    width: 30px;
+    border-radius: 9999px;
+    background: linear-gradient(-150deg, #56bda2,#012551);
+    animation: rand6 10s linear infinite alternate;
+}
+
+@keyframes rand6{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(300px) translateY(-100px) rotate(-120deg);
+    }
+    100%{
+        transform: translateX(600px) translateY(-200px) rotate(120deg);
+    }
+}
+
+.obj7{
+    position: absolute;
+    z-index: -2;
+    top: 150px;
+    right: 200px;
+    height: 30px;
+    width: 30px;
+    border-radius: 9999px;
+    background: linear-gradient(-150deg, #56bda2,#012551);
+    animation: rand7 10s linear infinite alternate;
+}
+
+@keyframes rand7{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-300px) translateY(100px) rotate(-120deg);
+    }
+    100%{
+        transform: translateX(-600px) translateY(200px) rotate(120deg);
+    }
+}
