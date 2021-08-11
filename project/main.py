@@ -52,7 +52,7 @@ def upload_text():
         parts = pageObj.extractText()
         text += parts
 
-    with open('summary.txt', 'w', encoding = 'utf-8') as s:
+    with open('summary.txt', 'r+', encoding = 'utf-8') as s:
         s.truncate(0)
         s.write(text)
 
@@ -74,6 +74,7 @@ def upload_file():
     ALLOWED_EXTENSIONS = {'pdf'}                                      
     summ_lines = request.form['lines_summary']
     summ_lines = int(summ_lines)
+    
     if request.method == 'POST':
         f = request.files['file']
         global file_name
@@ -95,11 +96,12 @@ def upload_file():
 
             text = text.replace("\n", "")
 
-            with open('summary.txt', 'w', encoding = 'utf-8') as s:        
+            with open('summary.txt', 'r+', encoding = 'utf-8') as s:        
                 s.write(text)
-
+                 
             final = generate_summary("summary.txt", summ_lines) 
-            final+="."
+            final += "."
+            
             fileobj.close()
 
         else:
@@ -131,9 +133,10 @@ def upload_audio():
             path = file_name
             text = get_large_audio_transcription(path)
 
-            with open('summary.txt', 'w', encoding = 'utf-8') as s:
+            with open('summary.txt', 'r+', encoding = 'utf-8') as s:
                 s.truncate(0)
                 s.write(text)
+                # count = s.read().count('.')
 
             final = generate_summary("summary.txt" , summ_lines)
             final+="."
